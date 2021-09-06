@@ -4,19 +4,21 @@ import java.util.Arrays;
 import java.util.OptionalInt;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class BinarySearch {
 	
 	@Autowired
-	private SortAlgorithm bubbleSortAlgorithm;
+	@Qualifier("quick")
+	private SortAlgorithm sortAlgorithm;
 	
 	
 	
 	public int Search(int[] numbers, int key)
 	{
-		bubbleSortAlgorithm.sort(numbers);
+		sortAlgorithm.sort(numbers);
 		
 		//
 		return Arrays.binarySearch(numbers, key);
