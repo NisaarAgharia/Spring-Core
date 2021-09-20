@@ -13,8 +13,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Named
+@Service
 @Scope(value = ConfigurableBeanFactory.SCOPE_SINGLETON)
 public class BinarySearch {
 	
@@ -52,12 +53,12 @@ public class BinarySearch {
 	
 	@PostConstruct
 	public void postConstruct() {
-		System.out.println("postConstruct");
+		System.out.println("After Constructing of Bean ");
 	}
 
 	@PreDestroy
 	public void preDestroy() {
-		System.out.println("preDestroy");
+		System.out.println("Before Destroying of Bean");
 	}
 
 }
